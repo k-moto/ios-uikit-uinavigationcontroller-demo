@@ -12,6 +12,9 @@ UIViewController
 |-----------|------------|------------|
 | viewControllers | ナビゲーションスタックにあるUIViewControllerの配列 | navigationController!.viewControllers |
 | topViewController | ナビゲーションスタック最上部のUIViewController | navigationController!.topViewController |
+| hidesBarsOnTap | 画面をタップしてナビゲーションコントローラーを隠せるかどうかのbool値 | self.navigationController?.hidesBarsOnTap = true |
+| hidesBarsOnSwipe | 画面を上下にスワイプしてナビゲーションコントローラーを隠せるかどうかのbool値 | self.navigationController?.hidesBarsOnSwipe = true |
+
 
 ## 主要メソッド
 
