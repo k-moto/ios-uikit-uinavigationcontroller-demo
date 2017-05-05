@@ -13,6 +13,16 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // タップでnavigationControllerを隠せないようにする
+        self.navigationController?.hidesBarsOnTap = false
+        // スワイプでnavigationControllerを隠せないようにする
+        self.navigationController?.hidesBarsOnSwipe = false
     }
     
     @IBAction private func didTapPush(_ sender: UIButton) {
@@ -33,6 +43,7 @@ extension ViewController: UINavigationControllerDelegate {
     
     fileprivate func setup() {
         navigationController?.delegate = self
+        
     }
     
     // 画面遷移直前に呼ばれる

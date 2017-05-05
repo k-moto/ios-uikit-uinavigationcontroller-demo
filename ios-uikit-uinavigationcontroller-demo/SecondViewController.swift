@@ -14,6 +14,15 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // タップでnavigationControllerを隠せないようにする
+        self.navigationController?.hidesBarsOnTap = false
+        // スワイプでnavigationControllerを隠せるようにする
+        self.navigationController?.hidesBarsOnSwipe = true
+    }
 
     private func setup() {
         
@@ -30,6 +39,7 @@ class SecondViewController: UIViewController {
                 
         // barButtonItemをrightBarButtonItemにセットする
         navigationItem.rightBarButtonItem = barButtonItem
+
     }
     
     

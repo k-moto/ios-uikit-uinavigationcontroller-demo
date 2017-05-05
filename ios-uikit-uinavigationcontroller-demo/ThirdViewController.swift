@@ -16,6 +16,15 @@ class ThirdViewController: UIViewController {
         printNavigationConfiguration()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // タップでnavigationControllerを隠せるようにする
+        self.navigationController?.hidesBarsOnTap = true
+        // スワイプでnavigationControllerを隠せないようにする
+        self.navigationController?.hidesBarsOnSwipe = false
+    }
+    
     // 本クラスではbackボタンのtitleを設定しない →デフォルト表示
     private func setup() {
         navigationItem.title = "Third"
@@ -24,6 +33,7 @@ class ThirdViewController: UIViewController {
                                             target: self,
                                             action: #selector(didTapBarButtonItem))
         navigationItem.rightBarButtonItem = barButtonItem
+
     }
     
     @objc private func didTapBarButtonItem() {
